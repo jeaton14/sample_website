@@ -1,1 +1,134 @@
-<p>Hello, world!</p>
+<!DOCTYPE html>
+<html>
+<html lang="en-US">
+
+<head>
+<title>Evullab Experiment"</title>
+<meta charset="UTF-8">
+<style>
+a:link {
+color:magenta;
+background-color: transparent;
+text-decoration: none;
+}
+a: visisted {
+color:pink;
+background-color:transparent;
+text-decoration: none;
+}
+a:hover {
+color:limegreen;
+background-color: transparent;
+text-decoration: underline;
+}
+a:active {
+color: yellow;
+background-color: transparent;
+text-decoration: underline;
+}
+p {
+font-size:12px;
+font-family:verdana;
+color:black;
+}
+h1 {
+font-size:20px;
+font-family:verdana;
+color:black;
+}
+body {
+background-color:white;
+}
+.screen {
+display:none;
+}
+</style>
+
+<script type="text/javascript">
+var products = ['fish', 'cat', 'dog', 'squirrel', 'eel'];
+var trialNumber = 0;
+var trialData = [];
+function pageLoad(){
+	document.getElementById('consent').style.display = 'block';
+}
+function clickConsent(){
+	document.getElementById('consent').style.display = 'none';
+	document.getElementById('instructions').style.display = 'block';
+}
+function clickInstructions(){
+	document.getElementById('instructions').style.display = 'none';
+	trialStart();
+}
+function trialStart(){
+	// take next product, and put in the product description.
+	document.getElementById('trialText').innerHTML = products[trialNumber];
+	// reset the slider
+	document.getElementById('trialSlider').value = 500;
+	document.getElementById('trial').style.display = 'block';
+}
+function trialDone(){
+	document.getElementById('trial').style.display = 'none';
+	// record what the subject said
+	trialData.push({
+		trialNumber: trialNumber,
+		product: products[trialNumber],
+		response: document.getElementById('trialSlider').value});
+	// increment the trialNumber
+	trialNumber = trialNumber+1;
+	// if we are done with all trials, then go to completed page
+	if(trialNumber >= products.length){
+		document.getElementById('completed').style.display = 'block';
+	} else {
+	// if we are not done with all trials, then show the next trial.
+		trialStart();
+	}
+}
+function experimentDone(){
+	window.location = 'http://www.evullab.org';
+}
+</script>
+
+</head>
+
+
+<body onload="pageLoad();">
+
+<div id="consent" class="screen">
+	<h1>University of California, San Diego<br>
+	Consent to act as a research subject</h1>
+
+	<p> Edward Vul, Ph.D. is conducting a research study to find out more about attention, distraction, and learning. You have been asked to participate because you are an undergraduate here at UCSD.</p>
+
+	<p><b>PROCEDURES.</b> If you agree to participate in this study, the following will happen to you:<br>
+	1. You will sit at a computer and see displays of letters, words, or pictures.<br>
+	2. You will try to perceive and remember these stimuli, and respond by pressing keys or saying things in a matter that the computer will describe to you.</p>
+	<p><b>RISKS.</b> No potential risks or discomforts are anticipated except for the possibility that some tasks may be slightly boring.</p>
+	<p><b>PAYMENT/REMUNERATION.</b> In consideration of your time and inconvenience, you will receive 1 hour of course credit. The procedures and length of participation will last approximately one hour.</p>
+	<p><b>RIGHTS.</b> You may call the UCSD Human Research Protection Program at 858-657-5100 to ask about your rights as a research subject or to report research-related problems.</p>
+	<p><b>BENEFITS.</b> There will be no direct benefit to you from these procedures. However, the investigator may learn more about basic questions pertaining to memory, perception, cognition, and learning. This knowledge may have benefits to society in fields ranging from education to design of airplane cockpits, but these benefits will be indrect.</p>
+	<p><b>EXPLANATION.</b> The researcher has explained this study to you and answered your questions. If you have questions or research related problems, you may reach Edward Vul at 858-534-4401.</p>
+	<p><b>VOLUNTARY NATURE OF PARTICIPATION.</b> Participation in research is entirely voluntary. You may refuse to participate or withdraw at any time without penalty.</p>
+	<p><b>CONFIDENTIALITY.</b> Research records will be kept confidential to the extent allowed by law</p>
+	<p><b>COPY OF CONSENT.</b> You have received a copy of this consent document to keep and a copy of the Experimental Bill of Rights.</p><br>
+	<p>Click the button below if you agree to participate.</p>
+
+	<button onclick="clickConsent();"> Click here to consent and agree to participate</button>
+</div>
+	<button>Click here</button>
+<div id="instructions" class="screen">
+
+<button onclick="clickInstructions();">I understand!</button>
+</div>
+
+<div id="trial" class="screen">
+	<div id="trialText">uselesstext</div><br>
+	<input type="range" min="1" max="1000" id="trialSlider"><br>
+	<button onclick="trialDone();">Trial Complete!</button>
+</div>
+
+<div id="completed" class="screen">
+<button onclick="experimentDone();">Finished!</button>
+</div>
+
+</body>
+</html>﻿
