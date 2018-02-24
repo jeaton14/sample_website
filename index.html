@@ -5,87 +5,8 @@
 <head>
 <title>Evullab Experiment"</title>
 <meta charset="UTF-8">
-<style>
-a:link {
-color:magenta;
-background-color: transparent;
-text-decoration: none;
-}
-a: visisted {
-color:pink;
-background-color:transparent;
-text-decoration: none;
-}
-a:hover {
-color:limegreen;
-background-color: transparent;
-text-decoration: underline;
-}
-a:active {
-color: yellow;
-background-color: transparent;
-text-decoration: underline;
-}
-p {
-font-size:12px;
-font-family:verdana;
-color:black;
-}
-h1 {
-font-size:20px;
-font-family:verdana;
-color:black;
-}
-body {
-background-color:white;
-}
-.screen {
-display:none;
-}
-</style>
-
-<script type="text/javascript">
-var products = ['fish', 'cat', 'dog', 'squirrel', 'eel'];
-var trialNumber = 0;
-var trialData = [];
-function pageLoad(){
-	document.getElementById('consent').style.display = 'block';
-}
-function clickConsent(){
-	document.getElementById('consent').style.display = 'none';
-	document.getElementById('instructions').style.display = 'block';
-}
-function clickInstructions(){
-	document.getElementById('instructions').style.display = 'none';
-	trialStart();
-}
-function trialStart(){
-	// take next product, and put in the product description.
-	document.getElementById('trialText').innerHTML = products[trialNumber];
-	// reset the slider
-	document.getElementById('trialSlider').value = 500;
-	document.getElementById('trial').style.display = 'block';
-}
-function trialDone(){
-	document.getElementById('trial').style.display = 'none';
-	// record what the subject said
-	trialData.push({
-		trialNumber: trialNumber,
-		product: products[trialNumber],
-		response: document.getElementById('trialSlider').value});
-	// increment the trialNumber
-	trialNumber = trialNumber+1;
-	// if we are done with all trials, then go to completed page
-	if(trialNumber >= products.length){
-		document.getElementById('completed').style.display = 'block';
-	} else {
-	// if we are not done with all trials, then show the next trial.
-		trialStart();
-	}
-}
-function experimentDone(){
-	window.location = 'http://www.evullab.org';
-}
+<link rel="stylesheet" href="style.css">
+<script type="text/javascript" src='script.js'>
 </script>
 
 </head>
