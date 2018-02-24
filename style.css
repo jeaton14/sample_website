@@ -1,0 +1,36 @@
+a:link {
+color:magenta;
+background-color: transparent;
+text-decoration: none;
+}
+a: visisted {
+color:pink;
+background-color:transparent;
+text-decoration: none;
+}
+a:hover {
+color:limegreen;
+background-color: transparent;
+text-decoration: underline;
+}
+a:active {
+color: yellow;
+background-color: transparent;
+text-decoration: underline;
+}
+p {
+font-size:12px;
+font-family:verdana;
+color:black;
+}
+h1 {
+font-size:20px;
+font-family:verdana;
+color:black;
+}
+body {
+background-color:white;
+}
+.screen {
+display:none;
+}
