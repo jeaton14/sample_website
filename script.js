@@ -2,7 +2,12 @@ var products = ['fish', 'cat', 'dog', 'squirrel', 'eel'];
 var trialNumber = 0;
 var trialData = [];
 
+function shuffle(){
+	products.sort(function(a, b){return 0.5 - Math.random()});
+}
+
 function pageLoad(){
+	shuffle();
 	document.getElementById('consent').style.display = 'block';
  
 }
