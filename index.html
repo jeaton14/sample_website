@@ -82,23 +82,23 @@ $(document).ready(function(){
 			<span id="product1-title" class="mtitle">
 			</span>
 		</div>
-		
-		<div id="product2" class="product">
-			<img id="product2-img" class="product-img" src="">
-			<span id="product2-title" class="product">
-			</span>
-			<span id="product2-description" class='mdescription'>
-			</span>
+	</div>
+</div>
+	
+	<div id="judgement-question">
+		<br>
+		<span id='judgement-question-text' class="question"> How much do you judge a person when they wear this product? 
+		</span><br>
+		<label for="judgement" style="float:left;">Not at all</label>
+		<label for="" style="float:right;">Very much</label>
+	<input type="range" min="-1000" max="1000"  value-"0" class ="slider" id="judgement" 
+oninput="moveSlider();">
+	</div>
+	<br>
+	<button id='trial-button' type="button" class="big-button"
+onclick="submitTrial();">Done!</button>
 		</div>
 	</div>
-	</div>
-	
-	<div id="trialText">How much do you judge a person when they wear this product? </div><br>
-	<input type="range" min="1" max="1000"  id="trialSlider"><br>
-	<button class="big-button" id="next" type="button" onclick="trialDone();"  >Done!</button>
-
-
-
 </div>
 
 
