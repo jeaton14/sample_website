@@ -1,4 +1,4 @@
-var products = ['fish', 'cat', 'dog', 'squirrel', 'eel'];
+var products = ['jewelry', 'technology', 'accessories', 'clothing', 'bags'];
 var trialNumber = 0;
 var trialData = [];
 
