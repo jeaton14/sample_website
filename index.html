@@ -64,11 +64,19 @@ $(document).ready(function(){
            After that, you will be asked to rate your perception of others who use these products. <br>
                    </p>
 
-<button class="big-button" onclick="clickInstructions();">Click here to begin</button>
+<button class="big-button" id="start-button" onclick="clickInstructions();">Click here to begin</button>
 </div>
 
+<div id ="completed" class = "screen"
+     <p class="mtitle">
+	Thank you for your participation!
+	</p>
+	<button class="big-button" id="done-button" onclick="submitExternal(client)">Click here to complete.
+	</button>
+	</div>
+
 <div id="trial" class="screen">
-	<div id="trialText">uselesstext</div><br>
+	<div id="trialText">How much do you judge a person when they wear this product? </div><br>
 	<input type="range" min="1" max="1000"  id="trialSlider"><br>
 	<button class="big-button" id="next" type="button" onclick="trialDone();"  >Done!</button>
 
@@ -76,9 +84,7 @@ $(document).ready(function(){
 
 </div>
 
-<div id="completed" class="screen">
-<button class="big-button" id="finished" onclick="experimentDone();">Finished!</button>
-</div>
+
 
 </body>
 
