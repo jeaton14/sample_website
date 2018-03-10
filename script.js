@@ -28,7 +28,7 @@ function trialStart(){
 	// take next product, and put in the product description.
 	document.getElementById('trialText').innerHTML = products[trialNumber];
 	// reset the slider
-	document.getElementById('trialSlider').value = 500;
+	document.getElementById('trialSlider').value = 0;
 
 	document.getElementById('trial').style.display = 'block';
 document.getElementById('next').disabled=true;
