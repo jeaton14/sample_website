@@ -78,19 +78,18 @@ $(document).ready(function(){
 	</div>
 </div>
 	
-	<div id="judgement-question" class="screen">
+	<div id="trial" class="screen">
 		<br>
-		<span id='judgement-question-text' class="screen"> How much do you judge a person when they wear this product? 
+		<span id='trialText' class="screen"> How much do you judge a person when they wear this product? 
 		</span><br><br>
-		<label for="judgement" style="float:left;">Not at all</label>
+		<label for="trialSlider" style="float:left;">Not at all</label>
 		<label for="" style="float:right;">Very much</label>
-	<input type="range" min="-1000" max="1000"  value-"0" class ="slider" id="judgement" 
+	<input type="range" min="-1000" max="1000"  value-"0" class ="slider" id="trialSlider" 
 oninput="moveSlider();">
+		<button id='trial-button' type="button" class="big-button"
+onclick="submitTrial();">Done!</button>
 	</div>
 	<br>
-	<button id='trial-button' type="button" class="big-button"
-onclick="submitTrial();">Done!</button>
-		</div>
 	</div>
 </div>
 
