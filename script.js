@@ -1,15 +1,19 @@
-var products = ['jewelry', 'technology', 'accessories', 'clothing', 'bags'];
 var trialNumber = 0;
 var trialData = [];
+products.sort(function(){
+return 0.5 -Math.random()
+})
 
-function shuffle(){
-	products.sort(function(a, b){return 0.5 - Math.random()});
-}
+
+//shuffle(products);
+//function choosePic() {
+//var randomNum = Math.floor(Math.random() * myPictures.length);
+//     document.getElementById("myPicture").src = myPictures[randomNum];}
 
 function pageLoad(){
-	shuffle();
+
 	document.getElementById('consent').style.display = 'block';
- 
+
 }
 function clickConsent(){
 	document.getElementById('consent').style.display = 'none';
@@ -26,12 +30,15 @@ function clickInstructions(){
 
 function trialStart(){
 	// take next product, and put in the product description.
-	document.getElementById('trialText').innerHTML = products[trialNumber];
+//	choosePic();
+document.getElementById('trialText').innerHTML = products[trialNumber].name;
+document.getElementById("myPicture").src = products[trialNumber].img;
 	// reset the slider
-	document.getElementById('trialSlider').value = 0;
+	document.getElementById('trialSlider').value = 500;
 
 	document.getElementById('trial').style.display = 'block';
-document.getElementById('next').disabled=true;
+document.getElementById('next').disabled=true;;
+document.getElementById('next').style.backgroundColor="grey";
 }
 
 function trialDone(){
@@ -49,7 +56,7 @@ function trialDone(){
 		document.getElementById('completed').style.display = 'block';
 	} else {
 	// if we are not done with all trials, then show the next trial.
-		trialStart();		
+		trialStart();
 	}
 
 }
@@ -57,6 +64,5 @@ function trialDone(){
 function experimentDone(){
 	window.location = 'http://www.evullab.org';
 }
-
 
  
