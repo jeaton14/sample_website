@@ -13,13 +13,18 @@ TODO:
 <meta charset="UTF-8">
 <head>
 <link rel="stylesheet" href="style.css">
-<script type="text/javascript" src='script.js'></script>   
+<script type="text/javascript" src='product.js'></script>
+
+<script type="text/javascript" src='script.js'></script> 
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
 
 <script>
 $(document).ready(function(){
     $("input").change(function(){
          $('#next').prop('disabled',false);
+          $('#next').css("backgroundColor", "green");
+
     });
 });
 </script>
@@ -56,42 +61,29 @@ $(document).ready(function(){
 
 <div id="instructions" class="screen">
  <p class="mtitle">
-            Welcome to our brand products study!
+            Welcome to the xxxxx   study.
         </p>
         <p class="mtitle">
-            On the next screen, you will see pictures of products that are frequently bought/used.        </p>
+            You will see some pictures.        </p>
         <p class="mtitle">
-           After that, you will be asked to rate your perception of others who use these products. <br>
+           You will response with a slider bar to each question. <br>
                    </p>
 
-<button class="big-button" id="start-button" onclick="clickInstructions();">Click here to begin</button>
+<button class="big-button" onclick="clickInstructions();">Click here to begin</button>
 </div>
 
-<div id ="completed" class ="screen">
-     <p class="mtitle">
-	Thank you for your participation!
-	</p>
-	<button class="big-button" id="done-button" onclick="experimentDone()">Click here to complete.
-	</button>
-	</div>
+<div id="trial" class="screen">
+	<center><div id="trialText">uselesstext</div><br></center>
+ <center><img src="basketball.jpg" width="305" height="312" id="myPicture" alt="some image"></center>
+	<input type="range" min="1" max="1000"  id="trialSlider"><br>
+	<button class="big-button" id="next" type="button" onclick="trialDone();"  >Next!</button>
 
-	</div>
-</div>
-	
-	<div id="trial" class="screen">
-		<br>
-		<div id='trialText'> How much do you judge a person when they wear this product? 
-		</div><br><br>
-		<label for="trialSlider" style="float:left;">Not at all</label>
-		<label for="" style="float:right;">Very much</label>
-	<input type="range" min="-1000" max="1000"  value="0" class="slider" id="trialSlider" oninput="moveSlider();">
-		<button id='trial-button' type="button" class="big-button" onclick="trialDone();">Done!</button>
-	</div>
+
+
 </div>
 
-
+<div id="completed" class="screen">
+<button class="big-button" id="finished" onclick="experimentDone();">Finished!</button>
+</div>
 
 </body>
-
-
-</html>
