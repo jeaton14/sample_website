@@ -1,5 +1,8 @@
 var trialNumber = 0;
 var trialData = [];
+var itemA = 0;
+var itemB = 0;
+var ComparingTrial = 0;
 products.sort(function(){
 return 0.5 -Math.random()
 })
@@ -23,7 +26,7 @@ function clickConsent(){
 
 function clickInstructions(){
 	document.getElementById('instructions').style.display = 'none';
-	trialStart();
+	comparingStart();
 
 }
 
@@ -61,8 +64,42 @@ function trialDone(){
 
 }
 
+function comparingStart(){
+  //randomly select two of the products
+	//put into one question with silde bar
+	itemA = Math.floor(Math.random() * 54);
+	document.getElementById('Text1').innerHTML = products[itemA].name;
+	document.getElementById("Picture1").src = products[itemA].img;
+		// reset the slider
+		itemB = Math.floor(Math.random() * 54);
+		document.getElementById('Text2').innerHTML = products[itemB].name;
+		document.getElementById("Picture2").src = products[itemB].img;
+
+		document.getElementById('CompSlider').value = 500;
+
+		document.getElementById('Comparing').style.display = 'block';
+	  //document.getElementById('nextitem').disabled=true;;
+	  //document.getElementById('nextitem').style.backgroundColor="grey";
+}
+
+//record the data in a right way
+//end the loop
+function comparingDone() {
+	document.getElementById('Comparing').style.display = 'none';
+
+	//need to figure out how to record the data precisely
+
+	ComparingTrial = ComparingTrial + 1;
+	if (ComparingTrial >= 5) {
+		trialStart()
+		}
+		else {
+		comparingStart()
+	}
+
+}
+
+
 function experimentDone(){
 	window.location = 'http://www.evullab.org';
 }
-
- 

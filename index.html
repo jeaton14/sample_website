@@ -15,9 +15,9 @@ TODO:
 <link rel="stylesheet" href="style.css">
 <script type="text/javascript" src='product.js'></script>
 
-<script type="text/javascript" src='script.js'></script> 
+<script type="text/javascript" src='script.js'></script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <script>
 $(document).ready(function(){
@@ -73,14 +73,21 @@ $(document).ready(function(){
 </div>
 
 <div id="trial" class="screen">
-	<center><p>How much will you learn someone form their <b  id="trialText"></b>?</p><br></center>
+	<center><p>How much will you learn someone from their <b  id="trialText"></b>?</p><br></center>
  <center><img src="basketball.jpg" width="305" height="312" id="myPicture" alt="some image"></center>
 	<input type="range" min="1" max="1000"  id="trialSlider"><br>
 	<button class="big-button" id="next" type="button" onclick="trialDone();"  >Next!</button>
+</div>
 
-
+  <div id="Comparing" class="screen">
+  	<center><p> comparing <b  id="Text1"></b> and <b  id="Text2"></b>?</p><br></center>
+    <img src="basketball.jpg" width="305" height="312" id="Picture1" alt="some image"></center>
+    <img src="basketball.jpg" width="305" height="312" id="Picture2" alt="some image"></center>
+  	<input type="range" min="1" max="1000"  id="CompSlider"><br>
+  	<button class="big-button" id="nextitem" type="button" onclick="comparingDone();"  >Next!</button>
 
 </div>
+
 
 <div id="completed" class="screen">
   <center><p class="mtitle"> Congratulations! You've finishied the survey!</p></center>
