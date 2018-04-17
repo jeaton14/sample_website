@@ -23,7 +23,9 @@ TODO:
 $(document).ready(function(){
     $("input").change(function(){
          $('#next').prop('disabled',false);
-          $('#next').css("backgroundColor", "green");
+          $('#next').css("backgroundColor", "green")
+          $('#nextitem').prop('disabled',false);
+           $('#nextitem').css("backgroundColor", "green");
 
     });
 });
@@ -81,7 +83,7 @@ $(document).ready(function(){
 
   <div id="Comparing" class="screen">
   	<center><p> comparing <b  id="Text1"></b> and <b  id="Text2"></b>?</p><br></center>
-    <img src="basketball.jpg" width="305" height="312" id="Picture1" alt="some image"></center>
+    <center><img src="basketball.jpg" width="305" height="312" id="Picture1" alt="some image">
     <img src="basketball.jpg" width="305" height="312" id="Picture2" alt="some image"></center>
   	<input type="range" min="1" max="1000"  id="CompSlider"><br>
   	<button class="big-button" id="nextitem" type="button" onclick="comparingDone();"  >Next!</button>

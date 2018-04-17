@@ -78,8 +78,8 @@ function comparingStart(){
 		document.getElementById('CompSlider').value = 500;
 
 		document.getElementById('Comparing').style.display = 'block';
-	  //document.getElementById('nextitem').disabled=true;;
-	  //document.getElementById('nextitem').style.backgroundColor="grey";
+	  document.getElementById('nextitem').disabled=true;;
+	  document.getElementById('nextitem').style.backgroundColor="grey";
 }
 
 //record the data in a right way
@@ -88,7 +88,11 @@ function comparingDone() {
 	document.getElementById('Comparing').style.display = 'none';
 
 	//need to figure out how to record the data precisely
-
+	trialData.push({
+		ComparingTrial: ComparingTrial,
+		itemA: products[itemA],
+		itemB: products[itemB],
+		ComparingResponse: document.getElementById('trialSlider').value});
 	ComparingTrial = ComparingTrial + 1;
 	if (ComparingTrial >= 5) {
 		trialStart()
