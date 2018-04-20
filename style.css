@@ -4,7 +4,7 @@
 input[type=range] {
   -webkit-appearance: none;
   margin: 18px 0;
-  width: 95%;
+  width: 70%;
 }
 input[type=range]::-webkit-slider-runnable-track {
   width: 95%;
@@ -33,9 +33,9 @@ input[type=range]::-webkit-slider-thumb {
 
 
 p {
-font-size:17px;
-font-family:verdana;
-color:black;
+  font-size:17px;
+  font-family:verdana;
+  color:black;
     margin-top: 20px;
     margin-bottom: 30px;
     margin-right: 50px;
@@ -59,7 +59,31 @@ background-color:white;
 display:none;
 }
 
+.questions {
+  font-size:25px;
+  font-family:verdana;
+  color:black;
+}
 
+.textleft{
+  margin-left: 10%;
+}
+
+.textright{
+  margin-left: 60%;
+}
+
+.picture1 {
+  width: 120px;
+  height: 100px;
+  margin-left: 10%;
+}
+
+.picture2 {
+  width: 120px;
+  height: 100px;
+  margin-left: 60%;
+}
 
 .big-button {
   margin-left: 25%;
@@ -80,8 +104,3 @@ display:none;
 .big-button:hover {
   background-color: #0A0;
  }
-
-
-
-
-

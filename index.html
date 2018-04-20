@@ -63,7 +63,7 @@ $(document).ready(function(){
 
 <div id="instructions" class="screen">
  <p class="mtitle">
-            Welcome to the xxxxx   study.
+            Welcome to the signaling study.
         </p>
         <p class="mtitle">
             You will see some pictures.        </p>
@@ -75,18 +75,22 @@ $(document).ready(function(){
 </div>
 
 <div id="trial" class="screen">
-	<center><p>How much will you learn someone from their <b  id="trialText"></b>?</p><br></center>
+	<center><p class="questions">How much will you learn someone from their <b  id="trialText"></b>?</p><br></center>
  <center><img src="basketball.jpg" width="305" height="312" id="myPicture" alt="some image"></center>
-	<input type="range" min="1" max="1000"  id="trialSlider"><br>
+<p class="textleft">Not at all </p> <p class="textright"> Very much </p>
+  <center><input type="range" min="1" max="1000"  id="trialSlider"><br></center>
 	<button class="big-button" id="next" type="button" onclick="trialDone();"  >Next!</button>
 </div>
 
   <div id="Comparing" class="screen">
-  	<center><p> If you know someone who has these two items, which item tells you more about that person?
+    <br></br>
+  	<center><p class="questions"> Which item do you think that people will more care about when judging someone else?
       <br></br><b  id="Text1"></b> or <b  id="Text2"></b>?</p><br></center>
-    <center><img src="basketball.jpg" width="305" height="312" id="Picture1" alt="some image">
-    <img src="basketball.jpg" width="305" height="312" id="Picture2" alt="some image"></center>
-  	<input type="range" min="1" max="1000"  id="CompSlider"><br>
+    <img src="basketball.jpg" width="305" height="312" id="Picture1" class="picture1" alt="some image">
+    <img src="basketball.jpg" width="305" height="312" id="Picture2" class="picture2" alt="some image">
+
+    <center><input type="range" min="1" max="1000"  id="CompSlider"></center>
+
   	<button class="big-button" id="nextitem" type="button" onclick="comparingDone();"  >Next!</button>
 
 </div>
