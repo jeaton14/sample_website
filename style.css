@@ -117,3 +117,8 @@ display:none;
     background-color: #4CAF50;
     color: white;
 }
+
+.big-button:hover {
+  background-color: #4CAF50;
+    color: white;
+  }
