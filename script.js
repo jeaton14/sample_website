@@ -94,7 +94,7 @@ function comparingDone() {
 		itemB: products[itemB],
 		ComparingResponse: document.getElementById('trialSlider').value});
 	ComparingTrial = ComparingTrial + 1;
-	if (ComparingTrial >= 5) {
+	if (ComparingTrial >= 1) {
 		trialStart()
 		}
 		else {

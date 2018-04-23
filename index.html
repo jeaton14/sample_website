@@ -76,8 +76,8 @@ $(document).ready(function(){
 
 <div id="trial" class="screen">
 	<center><p class="questions">How much will you learn someone from their <b  id="trialText"></b>?</p><br></center>
- <center><img src="basketball.jpg" width="305" height="312" id="myPicture" alt="some image"></center>
-<p class="textleft">Not at all </p> <p class="textright"> Very much </p>
+ <center><img src="basketball.jpg" width="305" height="312" id="myPicture" alt="some image" class="pic"></center>
+<div class="textleft">Not at all </div><div class="textright"> Very much </div>
   <center><input type="range" min="1" max="1000"  id="trialSlider"><br></center>
 	<button class="big-button" id="next" type="button" onclick="trialDone();"  >Next!</button>
 </div>
@@ -97,7 +97,7 @@ $(document).ready(function(){
 
 
 <div id="completed" class="screen">
-  <center><p class="mtitle"> Congratulations! You've finishied the survey!</p></center>
+  <center><p class="mtitle"> Congratulations! You've finished the survey!</p></center>
 <button class="big-button" id="finished" onclick="experimentDone();">Finished!</button>
 </div>
 

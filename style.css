@@ -29,7 +29,10 @@ input[type=range]::-webkit-slider-thumb {
   margin-top: -14px;
 }
 
-
+.pic {
+  height: auto;
+  width: 15%;
+}
 
 
 p {
@@ -75,13 +78,13 @@ display:none;
 
 .picture1 {
   width: 120px;
-  height: 100px;
+  height: auto;
   margin-left: 10%;
 }
 
 .picture2 {
   width: 120px;
-  height: 100px;
+  height: auto;
   margin-left: 60%;
 }
 
