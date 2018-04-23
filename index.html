@@ -41,7 +41,12 @@ $(document).ready(function(){
 <div id="consent" class="screen">
 	<h1 class="mtitle" >University of California, San Diego<br>
 	Consent to act as a research subject</h1>
-	<p>  Edward Vul, Ph.D. is conducting a research study to find out more about attention, distraction and learning.
+	<p> 
+	p {
+ 	    margin-right:10%
+  	    margin-left:10%
+        }
+	    Edward Vul, Ph.D. is conducting a research study to find out more about attention, distraction and learning.
             You have been asked to participate because you are an undergraduate here at UCSD. <br><br>
             PROCEDURES. If you agree to participate in this study, the following will happen to you:<br>
             1. You will sit at the computer and see displays of letters, words, or pictures.<br>
@@ -57,6 +62,17 @@ $(document).ready(function(){
             CONFIDENTIALITY. Research records will be kept confidential to the extent allowed by law. As with all research, there is also the possibility of loss of confidentiality. Information from participants will be identified by a study number. The database which relates the study number to a specific subject will be maintained in the study coordinators office.<br><br>
             COPY OF CONSENT. You have received a copy of this consent document to keep and a copy of the Experimental Bill of Rights.
             </p>
+
+	.button1 {
+background-color: white; 
+color: black; 
+border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+    background-color: #4CAF50;
+    color: white;
+}
 
 	<button class= "big-button" onclick="clickConsent();"  > Click here to consent and agree to participate</button>
 </div>
