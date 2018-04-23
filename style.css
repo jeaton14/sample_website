@@ -98,7 +98,7 @@ display:none;
   font-family: "Helvetica", sans-serif;
   font-weight: bold;
   
-.big-button: hover {
+.big-button:hover {
     background-color: #4CAF50;
     color: white;
 }
