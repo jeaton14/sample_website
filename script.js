@@ -68,18 +68,30 @@ function comparingStart(){
   //randomly select two of the products
 	//put into one question with silde bar
 	itemA = Math.floor(Math.random() * 54);
-	document.getElementById('Text1').innerHTML = products[itemA].name;
-	document.getElementById("Picture1").src = products[itemA].img;
+
 		// reset the slider
 		itemB = Math.floor(Math.random() * 54);
-		document.getElementById('Text2').innerHTML = products[itemB].name;
-		document.getElementById("Picture2").src = products[itemB].img;
+		for (var i = 0; itemA = itemB; i++) {
 
-		document.getElementById('CompSlider').value = 500;
+		}
+		if (itemA != itemB) {
+			document.getElementById('Text1').innerHTML = products[itemA].name;
+			document.getElementById("Picture1").src = products[itemA].img;
 
-		document.getElementById('Comparing').style.display = 'block';
-	  document.getElementById('nextitem').disabled=true;;
-	  document.getElementById('nextitem').style.backgroundColor="grey";
+			document.getElementById('Text2').innerHTML = products[itemB].name;
+			document.getElementById("Picture2").src = products[itemB].img;
+
+			document.getElementById('CompSlider').value = 500;
+
+			document.getElementById('Comparing').style.display = 'block';
+			document.getElementById('nextitem').disabled=true;;
+			document.getElementById('nextitem').style.backgroundColor="grey";
+		} else {
+			itemA = Math.floor(Math.random() * 54);
+			itemB = Math.floor(Math.random() * 54);
+
+		}
+
 }
 
 //record the data in a right way
@@ -94,7 +106,7 @@ function comparingDone() {
 		itemB: products[itemB],
 		ComparingResponse: document.getElementById('trialSlider').value});
 	ComparingTrial = ComparingTrial + 1;
-	if (ComparingTrial >= 1) {
+	if (ComparingTrial >= 10) {
 		trialStart()
 		}
 		else {
