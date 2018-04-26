@@ -111,11 +111,13 @@ display:none;
   display: inline-block;
   font-size: 1.25em;
   font-family: "Helvetica", sans-serif;
-  font-weight: bold;
-  
+  font-weight: bold; 
+}
+
 .big-button:hover {
     background-color: #4CAF50;
     color: white;
+  
 }
 
 
