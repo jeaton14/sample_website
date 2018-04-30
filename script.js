@@ -1,11 +1,23 @@
 var trialNumber = 0;
 var trialData = [];
-var itemA = 0;
-var itemB = 0;
+//var itemA = 0;
+//var itemB = 0;
 var ComparingTrial = 0;
+var comparing = [];
+var Trial = 0;
+var order = 0;
 products.sort(function(){
 return 0.5 -Math.random()
 })
+
+for (var i = 0; i < products.length; i++)  {
+	for (var j = i+1; j < products.length ; j++) {
+	 comparing.push({
+		 itemA: products[i],
+		 itemB: products[j],
+	 })
+	}
+}
 
 
 //shuffle(products);
@@ -53,7 +65,7 @@ function trialDone(){
 		response: document.getElementById('trialSlider').value});
 	// increment the trialNumber
 	trialNumber = trialNumber+1;
-
+  order = order+1;
 	// if we are done with all trials, then go to completed page
 	if(trialNumber >= products.length){
 		document.getElementById('completed').style.display = 'block';
@@ -67,29 +79,40 @@ function trialDone(){
 function comparingStart(){
   //randomly select two of the products
 	//put into one question with silde bar
-	itemA = Math.floor(Math.random() * 54);
-		// reset the slider
-	itemB = Math.floor(Math.random() * 54);
+  Trial = Math.floor(Math.random() * comparing.length);
 
-	if (itemA != itemB) {
-
-				document.getElementById('Text1').innerHTML = products[itemA].name;
-				document.getElementById("Picture1").src = products[itemA].img;
-
-				document.getElementById('Text2').innerHTML = products[itemB].name;
-				document.getElementById("Picture2").src = products[itemB].img;
-
+				document.getElementById('Text1').innerHTML = comparing[Trial].itemA.name;
+				document.getElementById("Picture1").src = comparing[Trial].itemA.img;
+				document.getElementById('Text2').innerHTML = comparing[Trial].itemB.name;
+				document.getElementById("Picture2").src = comparing[Trial].itemB.img;
 				document.getElementById('CompSlider').value = 500;
-
 				document.getElementById('Comparing').style.display = 'block';
 				document.getElementById('nextitem').disabled=true;;
 				document.getElementById('nextitem').style.backgroundColor="grey";
-    }
- else {
-	comparingStart()
+
 }
 
+function attention(){
 
+	document.getElementById("Comparing").style.display = 'none';
+
+	Trial = Math.floor(Math.random() * comparing.length);
+	      document.getElementById("attention").style.display = 'block';
+				document.getElementById("AText1").innerHTML = comparing[Trial].itemA.name;
+				document.getElementById("AText2").innerHTML = comparing[Trial].itemB.name;
+				document.getElementById("AttPicture1").src = comparing[Trial].itemA.img;
+				document.getElementById("AttPicture2").src = comparing[Trial].itemB.img;
+				document.getElementById('attFinish').disabled=true;;
+				document.getElementById('attFinish').style.backgroundColor="grey";
+}
+
+function Acheck(){
+
+ trialData.push({
+	 attention:document.getElementById('attentionslider').value});
+	document.getElementById('attention').style.display = 'none';
+	ComparingTrial = ComparingTrial + 1;
+	comparingStart()
 }
 
 //record the data in a right way
@@ -100,12 +123,15 @@ function comparingDone() {
 	//need to figure out how to record the data precisely
 	trialData.push({
 		ComparingTrial: ComparingTrial,
-		itemA: products[itemA],
-		itemB: products[itemB],
-		ComparingResponse: document.getElementById('trialSlider').value});
+		itemA: comparing[Trial].itemA,
+		itemB: comparing[Trial].itemB,
+		ComparingResponse: document.getElementById('CompSlider').value});
 	ComparingTrial = ComparingTrial + 1;
-	if (ComparingTrial >= 20) {
+	if (ComparingTrial >= 5) {
 		trialStart()
+		}
+		else if (ComparingTrial == 3) {
+			attention()
 		}
 		else {
 		comparingStart()

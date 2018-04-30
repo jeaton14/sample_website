@@ -26,6 +26,8 @@ $(document).ready(function(){
           $('#next').css("backgroundColor", "green")
           $('#nextitem').prop('disabled',false);
            $('#nextitem').css("backgroundColor", "green");
+           $('#attFinish').prop('disabled',false);
+            $('#attFinish').css("backgroundColor", "green");
 
     });
 });
@@ -92,6 +94,20 @@ $(document).ready(function(){
     <center><input type="range" min="1" max="1000"  id="CompSlider"></center>
 
   	<button class="big-button" id="nextitem" type="button" onclick="comparingDone();"  >Next!</button>
+
+</div>
+
+
+<div id="attention" class="screen">
+  <br></br>
+  <center><p class="questions"> Please slide the bar to the right end to show you are paying attention.
+    <br></br><b  id="AText1"></b> or <b  id="AText2"></b>?</p><br></center>
+  <img src="basketball.jpg" width="305" height="312" id="AttPicture1" class="picture1" alt="some image">
+  <img src="basketball.jpg" width="305" height="312" id="AttPicture2" class="picture2" alt="some image">
+
+  <center><input type="range" min="1" max="1000"  id="attentionslider"></center>
+
+  <button class="big-button" id="attFinish" type="button" onclick="Acheck();"  >Next!</button>
 
 </div>
 
