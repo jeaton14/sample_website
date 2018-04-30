@@ -1,7 +1,5 @@
 var trialNumber = 0;
 var trialData = [];
-//var itemA = 0;
-//var itemB = 0;
 var ComparingTrial = 0;
 var comparing = [];
 var Trial = 0;
@@ -69,12 +67,41 @@ function trialDone(){
 	// if we are done with all trials, then go to completed page
 	if(trialNumber >= products.length){
 		document.getElementById('completed').style.display = 'block';
-	} else {
+	}
+else if (order == 4) {
+	attention_single();
+}
+	else {
 	// if we are not done with all trials, then show the next trial.
 		trialStart();
 	}
-
 }
+
+function attention_single(){
+	// take next product, and put in the product description.
+//	choosePic();
+document.getElementById('trial').style.display = 'none';
+	attention = Math.floor(Math.random() * products.length);
+document.getElementById('attentionText').innerHTML = products[attention].name;
+document.getElementById("AttPicture").src = products[attention].img;
+	// reset the slider
+	document.getElementById('AttSlider').value = 500;
+
+	document.getElementById('trialAttention').style.display = 'block';
+document.getElementById('done').disabled=true;;
+document.getElementById('done').style.backgroundColor="grey";
+	order = order+1;
+}
+
+function Acheck_single(){
+
+ trialData.push({
+	 attention:document.getElementById('AttSlider').value});
+	document.getElementById('trialAttention').style.display = 'none';
+
+	trialStart();
+}
+
 
 function comparingStart(){
   //randomly select two of the products
@@ -89,7 +116,6 @@ function comparingStart(){
 				document.getElementById('Comparing').style.display = 'block';
 				document.getElementById('nextitem').disabled=true;;
 				document.getElementById('nextitem').style.backgroundColor="grey";
-
 }
 
 function attention(){

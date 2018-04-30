@@ -28,6 +28,8 @@ $(document).ready(function(){
            $('#nextitem').css("backgroundColor", "green");
            $('#attFinish').prop('disabled',false);
             $('#attFinish').css("backgroundColor", "green");
+            $('#done').prop('disabled',false);
+             $('#done').css("backgroundColor", "green");
 
     });
 });
@@ -82,6 +84,14 @@ $(document).ready(function(){
 <div class="textleft">Not at all </div><div class="textright"> Very much </div>
   <center><input type="range" min="1" max="1000"  id="trialSlider"><br></center>
 	<button class="big-button" id="next" type="button" onclick="trialDone();"  >Next!</button>
+</div>
+
+<div id="trialAttention" class="screen">
+	<center><p class="questions">Slide to the left end if you are paying attention <b  id="attentionText"></b>?</p><br></center>
+ <center><img src="basketball.jpg" width="305" height="312" id="AttPicture" alt="some image" class="pic"></center>
+<div class="textleft">Not at all </div><div class="textright"> Very much </div>
+  <center><input type="range" min="1" max="1000"  id="AttSlider"><br></center>
+	<button class="big-button" id="done" type="button" onclick="Acheck_single();"  >Next!</button>
 </div>
 
   <div id="Comparing" class="screen">
