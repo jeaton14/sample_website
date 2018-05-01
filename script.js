@@ -4,6 +4,7 @@ var ComparingTrial = 0;
 var comparing = [];
 var Trial = 0;
 var order = 0;
+//shuffle(products);
 products.sort(function(){
 return 0.5 -Math.random()
 })
@@ -17,8 +18,6 @@ for (var i = 0; i < products.length; i++)  {
 	}
 }
 
-
-//shuffle(products);
 //function choosePic() {
 //var randomNum = Math.floor(Math.random() * myPictures.length);
 //     document.getElementById("myPicture").src = myPictures[randomNum];}
@@ -141,19 +140,16 @@ function Acheck(){
 	comparingStart()
 }
 
-//record the data in a right way
-//end the loop
 function comparingDone() {
 	document.getElementById('Comparing').style.display = 'none';
 
-	//need to figure out how to record the data precisely
 	trialData.push({
 		ComparingTrial: ComparingTrial,
 		itemA: comparing[Trial].itemA,
 		itemB: comparing[Trial].itemB,
 		ComparingResponse: document.getElementById('CompSlider').value});
 	ComparingTrial = ComparingTrial + 1;
-	if (ComparingTrial >= 5) {
+	if (ComparingTrial > 5) {
 		trialStart()
 		}
 		else if (ComparingTrial == 3) {
