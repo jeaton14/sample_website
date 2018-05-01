@@ -47,7 +47,6 @@ document.getElementById('trialText').innerHTML = products[trialNumber].name;
 document.getElementById("myPicture").src = products[trialNumber].img;
 	// reset the slider
 	document.getElementById('trialSlider').value = 500;
-
 	document.getElementById('trial').style.display = 'block';
 document.getElementById('next').disabled=true;;
 document.getElementById('next').style.backgroundColor="grey";
@@ -149,15 +148,16 @@ function comparingDone() {
 		itemB: comparing[Trial].itemB,
 		ComparingResponse: document.getElementById('CompSlider').value});
 	ComparingTrial = ComparingTrial + 1;
+	delete comparing[Trial];
 	if (ComparingTrial > 5) {
-		trialStart()
+		trialStart();
 		}
 		else if (ComparingTrial == 3) {
-			attention()
+			attention();
 		}
 		else {
-		comparingStart()
-	}
+		comparingStart();
+	  }
 
 }
 
