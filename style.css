@@ -4,6 +4,7 @@ input[type=range] {
   margin: 18px 0;
   width: 70%;
 }
+
 input[type=range]::-webkit-slider-runnable-track {
   width: 95%;
   height: 8.4px;
@@ -27,7 +28,10 @@ input[type=range]::-webkit-slider-thumb {
   margin-top: -14px;
 }
 
-
+.pic {
+  height: 200px;
+  width: auto;
+}
 
 
 p {
@@ -65,22 +69,28 @@ display:none;
 
 .textleft{
   margin-left: 10%;
+  float: left;
+  font-size: 1.25em;
 }
 
 .textright{
-  margin-left: 60%;
+  float: right;
+  margin-right: 10%;
+  font-size: 1.25em;
 }
 
 .picture1 {
-  width: 120px;
-  height: 100px;
-  margin-left: 10%;
+  height: 120px;
+  width: auto;
+  float: left;
+  margin-left: 10%
 }
 
 .picture2 {
-  width: 120px;
-  height: 100px;
-  margin-left: 60%;
+  height: 120px;
+  width: auto;
+  margin-right: 10%;
+  float: right;
 }
 
 .big-button {
@@ -111,6 +121,15 @@ display:none;
   display: inline-block;
   font-size: 1.25em;
   font-family: "Helvetica", sans-serif;
+<<<<<<< HEAD
+  font-weight: bold;
+}
+
+.big-button:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+=======
   font-weight: bold; 
 }
 
@@ -121,3 +140,4 @@ display:none;
 }
 
 
+>>>>>>> master
