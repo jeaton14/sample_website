@@ -86,7 +86,7 @@ document.getElementById("AttPicture").src = products[attention].img;
 	document.getElementById('AttSlider').value = 500;
 
 	document.getElementById('trialAttention').style.display = 'block';
-document.getElementById('done').disabled=true;;
+document.getElementById('done').disabled=true;
 document.getElementById('done').style.backgroundColor="grey";
 	order = order+1;
 }
@@ -148,7 +148,8 @@ function comparingDone() {
 		itemB: comparing[Trial].itemB,
 		ComparingResponse: document.getElementById('CompSlider').value});
 	ComparingTrial = ComparingTrial + 1;
-	delete comparing[Trial];
+	//delete the chosed trial
+	comparing.splice(Trial,1);
 	if (ComparingTrial > 5) {
 		trialStart();
 		}
