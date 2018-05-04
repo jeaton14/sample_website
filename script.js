@@ -48,8 +48,7 @@ document.getElementById("myPicture").src = products[trialNumber].img;
 	// reset the slider
 	document.getElementById('trialSlider').value = 500;
 	document.getElementById('trial').style.display = 'block';
-document.getElementById('next').disabled=true;;
-document.getElementById('next').style.backgroundColor="grey";
+document.getElementById('next').disabled=true;
 }
 
 function trialDone(){
@@ -87,7 +86,6 @@ document.getElementById("AttPicture").src = products[attention].img;
 
 	document.getElementById('trialAttention').style.display = 'block';
 document.getElementById('done').disabled=true;
-document.getElementById('done').style.backgroundColor="grey";
 	order = order+1;
 }
 
@@ -113,7 +111,7 @@ function comparingStart(){
 				document.getElementById('CompSlider').value = 500;
 				document.getElementById('Comparing').style.display = 'block';
 				document.getElementById('nextitem').disabled=true;;
-				document.getElementById('nextitem').style.backgroundColor="grey";
+
 }
 
 function attention(){
@@ -127,7 +125,6 @@ function attention(){
 				document.getElementById("AttPicture1").src = comparing[Trial].itemA.img;
 				document.getElementById("AttPicture2").src = comparing[Trial].itemB.img;
 				document.getElementById('attFinish').disabled=true;;
-				document.getElementById('attFinish').style.backgroundColor="grey";
 }
 
 function Acheck(){

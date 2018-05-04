@@ -128,5 +128,9 @@ display:none;
   background-color: #4CAF50;
   color: white;
 }
+.big-button:disabled {
+  background-color: #555555;
+  color: white;
+}
 
 <button class="big-button">Green</button>
