@@ -26,7 +26,7 @@ function clickConsent(){
 
 function clickInstructions(){
 	document.getElementById('instructions').style.display = 'none';
-	comparingStart();
+	ranking();
 
 }
 
@@ -95,11 +95,26 @@ function comparingDone() {
 		ComparingResponse: document.getElementById('trialSlider').value});
 	ComparingTrial = ComparingTrial + 1;
 	if (ComparingTrial >= 5) {
-		trialStart()
+		trialStart();
 		}
 		else {
-		comparingStart()
+		comparingStart();
 	}
+}
+
+function ranking() {
+  document.getElementById('rankingTrial').style.display = 'block';
+
+
+}
+
+function rankingDone() {
+	document.getElementById('rankingTrial').style.display = 'none';
+ //record data
+  //trialData.push({
+
+	//})
+ experimentDone();
 
 }
 
