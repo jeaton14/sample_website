@@ -35,7 +35,7 @@ function clickConsent(){
 
 function clickInstructions(){
 	document.getElementById('instructions').style.display = 'none';
-	comparingStart();
+	trialStart();
 
 }
 
@@ -64,8 +64,9 @@ function trialDone(){
 	// if we are done with all trials, then go to completed page
 	if(trialNumber >= products.length){
 		document.getElementById('completed').style.display = 'block';
+		comparingStart();
 	}
-else if (order == 4) {
+else if (order == 18 || order == 36) {
 	attention_single();
 }
 	else {
@@ -94,7 +95,6 @@ function Acheck_single(){
  trialData.push({
 	 attention:document.getElementById('AttSlider').value});
 	document.getElementById('trialAttention').style.display = 'none';
-
 	trialStart();
 }
 
@@ -147,11 +147,11 @@ function comparingDone() {
 	ComparingTrial = ComparingTrial + 1;
 	//delete the chosed trial
 	comparing.splice(Trial,1);
-	if (ComparingTrial > 5) {
-		trialStart();
+	if (ComparingTrial > 20) {
+		ranking();
 		}
-		else if (ComparingTrial == 3) {
-			attention();
+		else if (ComparingTrial == 10) {
+		attention();
 		}
 		else {
 		comparingStart();
