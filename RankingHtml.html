@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="Rankingstyle.css"/>
+
+  <link rel="stylesheet" href="style.css">
+
+<script type="text/javascript" src='productRanking.js'></script>
+  
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script type="text/javascript" src='product.js'></script>
+
+<script>
+  $( function() {
+    $( "#sortable" ).sortable();
+    $( "#sortable" ).disableSelection();
+  } );
+  $( "#sortable" ).sortable( "toArray" ) 
+  </script>
+</head>
+<body>
+<p><center> Rank the following products according to … <center/><p/>
+ 
+<center><ul id="sortable">
+  <li class="listElement" id="item1"><span class="products"></span>baseball</li>
+  <li class="listElement" id="item2"><span class="products"></span>backpack</li>
+  <li class="listElement" id="item3"><span class="products"></span>bandaid</li>
+  <li class="listElement" id="item4"><span class="products"></span>basketball</li>
+  <li class="listElement" id="item5"><span class="products"></span>calculator</li>
+  <li class="listElement" id="item6"><span class="products"></span>car</li>
+  <li class="listElement" id="item7"><span class="products"></span>coffee</li>
+</ul><center/>
+
+
+ 
+</body>
+</html>
