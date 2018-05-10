@@ -1,28 +1,113 @@
-<!doctype html>
-<html lang="en">
+<!--
+TODO:
+1. get images of products
+2. make product list correct
+3. randomize product list
+4. make the actual content of the experiment not filler.
+5. make it less ugly.
+ -->
+
+<!DOCTYPE html>
+<html>
+<html lang="en-US">
+<meta charset="UTF-8">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="Rankingstyle.css"/>
-
-  <link rel="stylesheet" href="style.css">
-
-<script type="text/javascript" src='productRanking.js'></script>
-  
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="style.css">
 <script type="text/javascript" src='product.js'></script>
+ <script type="text/javascript" src='productRanking.js'></script>
+ 
+<script type="text/javascript" src='script2.js'></script>
+
+
+ <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+ <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 
 <script>
+
   $( function() {
     $( "#sortable" ).sortable();
     $( "#sortable" ).disableSelection();
   } );
   $( "#sortable" ).sortable( "toArray" ) 
   </script>
+
+<script>
+$(document).ready(function(){
+    $("input").change(function(){
+         $('#next').prop('disabled',false);
+          $('#next').css("backgroundColor", "green")
+          $('#nextitem').prop('disabled',false);
+           $('#nextitem').css("backgroundColor", "green");
+    });
+});
+</script>
+
+
+<link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
-<body>
-<p><center> Rank the following products according to … <center/><p/>
+
+
+<body onload="pageLoad();">
+
+<div id="consent" class="screen">
+	<h1 class="mtitle" >University of California, San Diego<br>
+	Consent to act as a research subject</h1>
+	<p>  Edward Vul, Ph.D. is conducting a research study to find out more about attention, distraction and learning.
+            You have been asked to participate because you are an undergraduate here at UCSD. <br><br>
+            PROCEDURES. If you agree to participate in this study, the following will happen to you:<br>
+            1. You will sit at the computer and see displays of letters, words, or pictures.<br>
+            2. You will try to perceive and remember these stimuli, and respond by pressing keys or saying things in
+            a manner that the computer will describe to you.<br><br>
+            RISKS. No potential risks or discomforts are anticipated except for the possibility that some tasks may be
+            slightly boring.<br><br>
+            PAYMENT/REMUNERATION. In consideration of your time and inconvenience, you will receive 1 hour of course credit. The procedures and length of participation will last approximately one hour.<br><br>
+            RIGHTS. You may call the UCSD Human Research Protection Program at 858-657- 5100 to ask about your rights as a research subject or to report research-related problems.<br><br>
+            BENEFITS. There will be no direct benefit to you from these procedures. However, the investigator may learn more about basic questions pertaining to memory, perception, cognition, and learning. This knowledge may have benefits to society in fields ranging from education to design of airplane cockpits, but these benefits will be indirect.<br><br>
+            EXPLANATION. The researcher has explained this study to you and answered your questions. If you have questions or research related problems, you may reach Edward Vul at 858-534- 4401.<br><br>
+            VOLUNTARY NATURE OF PARTICIPATION. Participation in research is entirely voluntary. You may refuse to participate or withdraw at any time without penalty.<br><br>
+            CONFIDENTIALITY. Research records will be kept confidential to the extent allowed by law. As with all research, there is also the possibility of loss of confidentiality. Information from participants will be identified by a study number. The database which relates the study number to a specific subject will be maintained in the study coordinators office.<br><br>
+            COPY OF CONSENT. You have received a copy of this consent document to keep and a copy of the Experimental Bill of Rights.
+            </p>
+
+	<button class= "big-button" onclick="clickConsent();"  > Click here to consent and agree to participate</button>
+</div>
+
+<div id="instructions" class="screen">
+ <p class="mtitle">
+            Welcome to the signaling study.
+        </p>
+        <p class="mtitle">
+            You will see some pictures.        </p>
+        <p class="mtitle">
+           You will response with a slider bar to each question. <br>
+                   </p>
+
+<button class="big-button" onclick="clickInstructions();">Click here to begin</button>
+</div>
+
+<div id="trial" class="screen">
+	<center><p class="questions">How much will you learn someone from their <b  id="trialText"></b>?</p><br></center>
+
+  <center><input type="range" min="1" max="1000"  id="trialSlider"><br></center>
+	<button class="big-button" id="next" type="button" onclick="trialDone();"  >Next!</button>
+</div>
+
+  <div id="Comparing" class="screen">
+    <br></br>
+  	<center><p class="questions"> Which item do you think that people will more care about when judging someone else?
+      <br></br><b  id="Text1"></b> or <b  id="Text2"></b>?</p><br></center>
+    <img src="basketball.jpg" width="305" height="312" id="Picture1" class="picture1" alt="some image">
+    <img src="basketball.jpg" width="305" height="312" id="Picture2" class="picture2" alt="some image">
+
+    <center><input type="range" min="1" max="1000"  id="CompSlider"></center>
+
+  	<button class="big-button" id="nextitem" type="button" onclick="comparingDone();"  >Next!</button>
+
+</div>
+
+<div id="rankingTrial" class="screen">
+  <center><p class="questions">Please rate these products in order of preference.</p></center>
  
 <center><ul id="sortable">
   <li class="listElement" id="item1"><span class="products"></span>baseball</li>
@@ -32,9 +117,20 @@
   <li class="listElement" id="item5"><span class="products"></span>calculator</li>
   <li class="listElement" id="item6"><span class="products"></span>car</li>
   <li class="listElement" id="item7"><span class="products"></span>coffee</li>
+<li class="listElement" id="item8"><span class="products"></span>coffee</li>
+<li class="listElement" id="item9"><span class="products"></span>coffee</li>
+
 </ul><center/>
 
 
- 
+
+  <button class="big-button" id="rankingNext" type="button" onclick="rankingDone();"  >Finish!</button>
+
+</div>
+
+<div id="completed" class="screen">
+  <center><p class="mtitle"> Congratulations! You've finishied the survey!</p></center>
+<button class="big-button" id="finished" onclick="experimentDone();">Finished!</button>
+</div>
+
 </body>
-</html>
