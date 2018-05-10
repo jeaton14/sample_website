@@ -3,11 +3,17 @@ var trialData = [];
 var itemA = 0;
 var itemB = 0;
 var ComparingTrial = 0;
+var rankingHere = [];
 products.sort(function(){
 return 0.5 -Math.random()
-})
+} )
 
-
+for (var i = 0; i < products.length; i++) {
+   
+     rankingHere.push({
+      itemRanking: productsRanking[i],
+     })
+}   
 //shuffle(products);
 //function choosePic() {
 //var randomNum = Math.floor(Math.random() * myPictures.length);
@@ -104,7 +110,33 @@ function comparingDone() {
 
 function ranking() {
   document.getElementById('rankingTrial').style.display = 'block';
-
+  Trail = Math.floor(Math.random() * rankingTrial.length);
+  document.getElementById('item1').innerHTML = rankingHere[Trail];
+  rankingHere.splice(Trail,1);
+Trail = Math.floor(Math.random() * rankingTrial.length);
+  document.getElementById('item2').innerHTML = rankingHere[Trail];
+rankingHere.splice(Trail,1);
+Trail = Math.floor(Math.random() * rankingTrial.length);
+document.getElementById('item3').innerHTML = rankingHere[Trail];
+rankingHere.splice(Trail,1);
+Trail = Math.floor(Math.random() * rankingTrial.length);
+document.getElementById('item4').innerHTML = rankingHere[Trail];
+rankingHere.splice(Trail,1);
+Trail = Math.floor(Math.random() * rankingTrial.length);
+document.getElementById('item5').innerHTML = rankingHere[Trail];
+rankingHere.splice(Trail,1);
+Trail = Math.floor(Math.random() * rankingTrial.length);
+document.getElementById('item6').innerHTML = rankingHere[Trail];
+rankingHere.splice(Trail,1);
+Trail = Math.floor(Math.random() * rankingTrial.length);
+document.getElementById('item7').innerHTML = rankingHere[Trail];
+rankingHere.splice(Trail,1);
+Trail = Math.floor(Math.random() * rankingTrial.length);
+document.getElementById('item8').innerHTML = rankingHere[Trail];
+rankingHere.splice(Trail,1);
+Trail = Math.floor(Math.random() * rankingTrial.length);
+document.getElementById('item9').innerHTML = rankingHere[Trail];
+rankingHere.splice(Trail,1);
 
 }
 
