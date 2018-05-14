@@ -15,7 +15,7 @@ TODO:
 <link rel="stylesheet" href="style.css">
 <script type="text/javascript" src='product.js'></script>
  <script type="text/javascript" src='productRanking.js'></script>
- 
+
 <script type="text/javascript" src='script2.js'></script>
 
 
@@ -29,7 +29,7 @@ TODO:
     $( "#sortable" ).sortable();
     $( "#sortable" ).disableSelection();
   } );
-  $( "#sortable" ).sortable( "toArray" ) 
+  $( "#sortable" ).sortable( "toArray" )
   </script>
 
 <script>
@@ -108,9 +108,9 @@ $(document).ready(function(){
 
 <div id="rankingTrial" class="screen">
   <center><p class="questions">Please rate these products in order of preference.</p></center>
- 
+
 <center><ul id="sortable">
-  <li class="listElement" id="item1"><span class="products"></span>baseball</li>
+  <li id="item1"></li>
   <li class="listElement" id="item2"><span class="products"></span>backpack</li>
   <li class="listElement" id="item3"><span class="products"></span>bandaid</li>
   <li class="listElement" id="item4"><span class="products"></span>basketball</li>
@@ -121,8 +121,6 @@ $(document).ready(function(){
 <li class="listElement" id="item9"><span class="products"></span>coffee</li>
 
 </ul><center/>
-
-
 
   <button class="big-button" id="rankingNext" type="button" onclick="rankingDone();"  >Finish!</button>
 
