@@ -1,0 +1,79 @@
+<!--
+TODO:
+1. get images of products
+2. make product list correct
+3. randomize product list
+4. make the actual content of the experiment not filler.
+5. make it less ugly.
+ -->
+
+<!DOCTYPE html>
+<html>
+<html lang="en-US">
+<meta charset="UTF-8">
+<head>
+<link rel="stylesheet" href="style.css">
+<script type="text/javascript" src='product.js'></script>
+ <script type="text/javascript" src='productRanking.js'></script>
+
+<script type="text/javascript" src='script2.js'></script>
+
+
+ <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+ <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+<script>
+
+  $( function() {
+    $( "#sortable" ).sortable();
+    $( "#sortable" ).disableSelection();
+  } );
+  $( "#sortable" ).sortable( "toArray" )
+  </script>
+
+<script>
+$(document).ready(function(){
+    $("input").change(function(){
+         $('#next').prop('disabled',false);
+          $('#next').css("backgroundColor", "green")
+          $('#nextitem').prop('disabled',false);
+           $('#nextitem').css("backgroundColor", "green");
+    });
+});
+</script>
+
+
+<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+
+
+<body onload="pageLoad();">
+
+</div>
+
+<div id="rankingTrial" class="screen">
+  <center><p class="questions">Please rate these products in order of preference.</p></center>
+
+<center><ul id="sortable">
+  <li class="listElement" id="item1"><span class="products"></span>baseball</li>
+  <li class="listElement" id="item2"><span class="products"></span>backpack</li>
+  <li class="listElement" id="item3"><span class="products"></span>bandaid</li>
+  <li class="listElement" id="item4"><span class="products"></span>basketball</li>
+  <li class="listElement" id="item5"><span class="products"></span>calculator</li>
+  <li class="listElement" id="item6"><span class="products"></span>car</li>
+  <li class="listElement" id="item7"><span class="products"></span>coffee</li>
+<li class="listElement" id="item8"><span class="products"></span>coffee</li>
+<li class="listElement" id="item9"><span class="products"></span>coffee</li>
+
+</ul><center/>
+
+
+
+  <button class="big-button" id="rankingNext" type="button" onclick="rankingDone();"  >Finish!</button>
+
+</div>
+
+
+
+</body>
