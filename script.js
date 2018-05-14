@@ -61,6 +61,7 @@ function trialDone(){
 	// increment the trialNumber
 	trialNumber = trialNumber+1;
   order = order+1;
+
 	// if we are done with all trials, then go to completed page
 	if(trialNumber >= products.length){
 		//document.getElementById('completed').style.display = 'block';
