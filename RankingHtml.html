@@ -14,38 +14,30 @@ TODO:
 <head>
 <link rel="stylesheet" href="style.css">
 <script type="text/javascript" src='product.js'></script>
- <script type="text/javascript" src='productRanking.js'></script>
-
 <script type="text/javascript" src='script2.js'></script>
-
-
- <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+ </head>
 
 <script>
-
   $( function() {
     $( "#sortable" ).sortable();
     $( "#sortable" ).disableSelection();
   } );
   $( "#sortable" ).sortable( "toArray" )
-  </script>
+</script>
 
 <script>
 $(document).ready(function(){
     $("input").change(function(){
          $('#next').prop('disabled',false);
-          $('#next').css("backgroundColor", "green")
           $('#nextitem').prop('disabled',false);
-           $('#nextitem').css("backgroundColor", "green");
+          $('#rankingNext').prop('disabled',false);
+          $('#finished').prop('disabled',false);
     });
 });
 </script>
 
-
-<link rel="stylesheet" type="text/css" href="style.css"/>
-</head>
 
 
 <body onload="pageLoad();">
@@ -78,48 +70,20 @@ $(document).ready(function(){
             Welcome to the signaling study.
         </p>
         <p class="mtitle">
-            You will see some pictures.        </p>
+            You will see lists of items.        </p>
         <p class="mtitle">
-           You will response with a slider bar to each question. <br>
+           Please rank the items  <br>
                    </p>
 
 <button class="big-button" onclick="clickInstructions();">Click here to begin</button>
 </div>
 
-<div id="trial" class="screen">
-	<center><p class="questions">How much will you learn someone from their <b  id="trialText"></b>?</p><br></center>
-
-  <center><input type="range" min="1" max="1000"  id="trialSlider"><br></center>
-	<button class="big-button" id="next" type="button" onclick="trialDone();"  >Next!</button>
-</div>
-
-  <div id="Comparing" class="screen">
-    <br></br>
-  	<center><p class="questions"> Which item do you think that people will more care about when judging someone else?
-      <br></br><b  id="Text1"></b> or <b  id="Text2"></b>?</p><br></center>
-    <img src="basketball.jpg" width="305" height="312" id="Picture1" class="picture1" alt="some image">
-    <img src="basketball.jpg" width="305" height="312" id="Picture2" class="picture2" alt="some image">
-
-    <center><input type="range" min="1" max="1000"  id="CompSlider"></center>
-
-  	<button class="big-button" id="nextitem" type="button" onclick="comparingDone();"  >Next!</button>
-
-</div>
-
 <div id="rankingTrial" class="screen">
-  
-  <center><p class="questions">Please rate these products in order of importance.</p></center>
+
+  <center><p class="questions"> Rank the following items according to what you think people would judge others on. </br>
+  <b><i><u>The first on the list meaning the most.</b></i></u></p></center>
 
 <center><ul id="sortable">
-  <p><li class="listElement" id="item1"><span class="products"></span>baseball</li>
-  <li class="listElement" id="item2"><span class="products"></span>backpack</li>
-  <li class="listElement" id="item3"><span class="products"></span>bandaid</li>
-  <li class="listElement" id="item4"><span class="products"></span>basketball</li>
-  <li class="listElement" id="item5"><span class="products"></span>calculator</li>
-  <li class="listElement" id="item6"><span class="products"></span>car</li>
-  <li class="listElement" id="item7"><span class="products"></span>coffee</li>
-<li class="listElement" id="item8"><span class="products"></span>coffee</li>
-	  <li class="listElement" id="item9"><span class="products"></span>coffee</li></p>
 
 </ul><center/>
 
@@ -128,7 +92,7 @@ $(document).ready(function(){
 </div>
 
 <div id="completed" class="screen">
-  <center><p class="mtitle"> Congratulations! You've finishied the survey!</p></center>
+  <center><p class="mtitle"> Thank you for participating in the survey! </p></center>
 <button class="big-button" id="finished" onclick="experimentDone();">Finished!</button>
 </div>
 

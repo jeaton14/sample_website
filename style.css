@@ -112,11 +112,6 @@ display:none;
   font-size: 1.25em;
   font-family: "Helvetica", sans-serif;
   font-weight: bold;
-  
-.big-button:hover {
-    background-color: #4CAF50;
-    color: white;
-}
 
 .big-button:hover {
   background-color: #4CAF50;
