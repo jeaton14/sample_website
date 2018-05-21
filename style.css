@@ -1,4 +1,6 @@
-
+<!DOCTYPE html>
+<html>
+<style>
 input[type=range] {
   -webkit-appearance: none;
   margin: 18px 0;
@@ -117,3 +119,4 @@ display:none;
   background-color: #4CAF50;
     color: white;
   }
+</style>
