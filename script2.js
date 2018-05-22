@@ -1,3 +1,4 @@
+var client = parseClient();
 var trialData = [];
 var productRanking = [];
 var sequence = 0;
@@ -46,6 +47,8 @@ function rankingDone() {
     ranking()
   }
   else {
+    data = {client: client, trials: trialData};
+		writeServer(data);
     document.getElementById('completed').style.display = 'block';
   }
 }
