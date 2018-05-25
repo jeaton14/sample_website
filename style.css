@@ -120,9 +120,12 @@ display:none;
     color: white;
   }
 
-li {
+.ui-sortable {
   border: 2px solid #4CAF50;
   background-color: white;
+  margin-left: 25%;
+  margin-right: 25%;
+  width:50%;
 }
 
 </style>

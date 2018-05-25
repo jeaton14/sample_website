@@ -1,4 +1,4 @@
-var client = parseClient();
+//var client = parseClient();
 var trialData = [];
 var productRanking = [];
 var sequence = 0;
@@ -30,7 +30,7 @@ function ranking() {
   $('#sortable').html('');
   for(i = 0; i<10; i++){
     current_product = Math.floor(Math.random() * productRanking.length);
-    $("#sortable").append("<li id='"+productRanking[current_product].itemRanking.img+"'>"+productRanking[current_product].itemRanking.name+"</li>")
+    $("#sortable").append("<li class='rank'"+productRanking[current_product].itemRanking.img+"'>"+productRanking[current_product].itemRanking.name+"</li>")
     productRanking.splice(current_product,1);
   }
   document.getElementById('rankingTrial').style.display = 'block';
