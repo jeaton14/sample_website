@@ -28,6 +28,22 @@ input[type=range]::-webkit-slider-thumb {
   margin-top: -14px;
 }
 
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
 .pic {
   height: 200px;
   width: auto;
@@ -132,5 +148,3 @@ display:none;
   background-color: #555555;
   color: white;
 }
-
-<button class="big-button">Green</button>
