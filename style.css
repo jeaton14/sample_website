@@ -119,4 +119,10 @@ display:none;
   background-color: #4CAF50;
     color: white;
   }
+
+li {
+  border: 2px solid #4CAF50;
+  background-color: white;
+}
+
 </style>
