@@ -30,7 +30,7 @@ function ranking() {
   $('#sortable').html('');
   for(i = 0; i<10; i++){
     current_product = Math.floor(Math.random() * productRanking.length);
-    $("#sortable").append("<li class='rank'"+productRanking[current_product].itemRanking.img+"'>"+productRanking[current_product].itemRanking.name+"</li>")
+    $("#sortable").append("<div class='rank' style='color:#F00; border: 2px solid #4CAF50; background-color:#00F;' id='"+productRanking[current_product].itemRanking.img+"'>"+productRanking[current_product].itemRanking.name+"</div>")
     productRanking.splice(current_product,1);
   }
   document.getElementById('rankingTrial').style.display = 'block';

@@ -121,11 +121,45 @@ display:none;
   }
 
 .ui-sortable {
-  border: 2px solid #4CAF50;
-  background-color: white;
   margin-left: 25%;
   margin-right: 25%;
   width:50%;
+  padding: 7px 32px;
+  border: 2px solid #4CAF50;
+  background-color: blue;
+  color: black;
+  text-align: center;
+}
+
+.sortable-draggable {
+  margin-left: 25%;
+  margin-right: 25%;
+  width:50%;
+  padding: 7px 32px;
+  border: 2px solid #4CAF50;
+  background-color: blue;
+  color: black;
+  text-align: center;
+}
+
+.ui-sortable-placeholder {
+  margin-left: 25%;
+  margin-right: 25%;
+  width:50%;
+  padding: 7px 32px;
+  border: 2px solid #4CAF50;
+  background-color: white;
+  color: black;
+  text-align: center;
+}
+
+.list {
+    background-color: #478BFF;
+    font-size: 30px;
+    text-align: center;
+    cursor: pointer;
+    font-family: Geneva,Arial,Helvetica,sans-serif;
+    border: 1px solid gray;
 }
 
 </style>
